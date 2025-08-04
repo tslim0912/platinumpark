@@ -1,0 +1,172 @@
+.panel-subtitles{
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #777;
+}
+
+form.dropzone{
+  border: 1px solid #ddd;
+}
+
+/*
+.dz-default{
+	height: 100px;
+    border: solid 1px #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.dz-image, .dz-details, .dz-progress, .dz-error-message{
+	display: inline-block;
+}
+
+.dz-preview{
+	margin-top: 15px;
+}
+
+.dz-success-mark, .dz-error-mark {
+  display: none;
+}
+
+.dz-image img{
+	width: 100px;
+}
+
+.dz-details{
+	display: inline-block;
+  height: 100px;
+  vertical-align: top;
+  margin-left: 15px;
+}
+*/
+
+.round-tag{
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.46);
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    z-index: 2;
+}
+
+.image-sequence-tag{
+    top: 10px;
+    left: 26px;
+    cursor: default;
+    position: absolute;
+}
+
+.star-tag{
+    top: 0px;
+    font-size: 30px;
+    left: 22px;
+    color: gold;
+    z-index: 1;
+    cursor: default;
+    position: absolute;
+}
+
+.branch a .glyphicon{
+    font-size: 13px;
+}
+
+
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+.centered-div {
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  max-width: 100%;
+}
+
+.tree-child-id{
+    text-align: center;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    vertical-align: middle;
+    width: 150px;
+    height: 150px;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.tree-child-detail{
+  margin-top: 10px;
+}
+
+.tree-child-detail .label{
+  line-height: 1.5;
+  white-space: normal;
+  display: block;
+  font-weight: 700;
+  padding: .4em;
+  font-size: 75%;
+  color: #333;
+  text-align: center;
+  vertical-align: baseline;
+  border-radius: .25em;
+  background-color: rgba(119, 119, 119, 0.48);
+}
+
+.alert{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.tree-view .alert-info{
+    color: white;
+    background-color: #4993e4;
+}
+
+.tree-view .alert-success{
+    color: white;
+    background-color: #6eb752;
+}
+
+.tree-view .alert-danger{
+    color: white;
+    background-color: #ff0047;
+}

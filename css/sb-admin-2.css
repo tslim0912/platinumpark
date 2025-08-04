@@ -1,0 +1,98 @@
+/*!
+ * Start Bootstrap - SB Admin 2 v3.3.7+1 (http://startbootstrap.com/template-overviews/sb-admin-2)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+.col-lg-3 .panel-green {
+  border-color: #5cb85c;
+}
+.col-lg-3 .panel-green > .panel-heading {
+  border-color: #5cb85c;
+  color: white;
+  background-color: #5cb85c;
+}
+.col-lg-3 .panel-green > a {
+  color: #5cb85c;
+}
+.col-lg-3 .panel-green > a:hover {
+  color: #3d8b3d;
+}
+.col-lg-3 .panel-red {
+  border-color: #d9534f;
+}
+.col-lg-3 .panel-red > .panel-heading {
+  border-color: #d9534f;
+  color: white;
+  background-color: #d9534f;
+}
+.col-lg-3 .panel-heading {
+  padding: 10px 15px;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+.col-lg-3 .panel-heading > .row {
+  justify-content: space-between;
+  align-items: center;
+}
+.col-lg-3 .panel-red > a {
+  color: #d9534f;
+}
+.col-lg-3 .panel-red > a:hover {
+  color: #b52b27;
+}
+.col-lg-3 .panel-yellow {
+  border-color: #f0ad4e;
+}
+.col-lg-3 .panel-yellow > .panel-heading {
+  border-color: #f0ad4e;
+  color: white;
+  background-color: #f0ad4e;
+}
+.col-lg-3 .panel-yellow > a {
+  color: #f0ad4e;
+}
+.col-lg-3 .panel-yellow > a:hover {
+  color: #df8a13;
+}
+.col-lg-3 .panel-heading {
+  padding: 30px;
+}
+.col-lg-3 .panel-blue > .panel-heading {
+  border-color: #15aabf;
+  color: white;
+  background-color: #15aabf;
+}
+.col-lg-3 .panel-blue  {
+  border-color: #15aabf;
+}
+.col-lg-3 .panel-blue > a {
+  color: #15aabf;
+}
+.col-lg-3 .panel-purple > .panel-heading {
+  border-color: rgba(128,0,128,0.85);
+  color: white;
+  background-color: rgba(128,0,128,0.85);
+}
+
+.col-lg-3 .panel-purple > a {
+  color: rgba(128,0,128,0.85);
+}
+.col-lg-3 .panel-purple {
+ border-color: rgba(128,0,128,0.85);
+}
+.col-lg-3 .panel-footer {
+  padding: 10px 15px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  text-align: center;
+}
+.huge {
+  font-size: 45px;
+}
+.huge  + div {
+  font-size: 20px
+}

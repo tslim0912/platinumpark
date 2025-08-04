@@ -1,0 +1,131 @@
+.project-invoice {
+    /* padding: 2rem 6rem; */
+}
+
+.project-invoice .header .info {
+    width: 100%;
+}
+
+.project-invoice .header .info .logo {
+    /* width: 200px;
+	height: 200px; */
+}
+
+.project-invoice .header .info .text {
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.project-invoice .header .title {
+    position: relative;
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.project-invoice .header .title span {
+    position: absolute;
+    content: '';
+    background: rgba(0, 0, 0, .25);
+    width: calc(50% - 4em);
+    height: 1px;
+    top: 50%;
+    left: 0;
+}
+
+.project-invoice .header .title span:last-child {
+    left: auto;
+    right: 0;
+}
+
+.quotation-detail-table {
+    display: inline-block;
+    border-collapse: collapse;
+}
+
+.quotation-detail-table td {
+    padding: .5rem;
+    padding-right: 3rem;
+    border: 1px solid rgba(150, 150, 150, .5);
+}
+
+.quotation-detail-table td:first-child {
+    background-color: rgba(200, 200, 200, .5);
+    font-weight: bold;
+}
+
+.sub-title {
+    padding: .5rem;
+    margin: .5rem 0;
+    margin-top: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.item-table th {
+    background-color: rgba(200, 200, 200, .5);
+}
+
+.item-table th {
+    padding: 1rem;
+    border: 1px solid rgba(150, 150, 150, .5);
+    font-weight: bold;
+}
+
+.item-table td {
+    padding: 1rem;
+    border: 1px solid rgba(150, 150, 150, .5);
+}
+
+.item-table th:nth-child(1),
+.item-table td:nth-child(1) {
+    text-align: center;
+}
+
+.item-table th:nth-child(5),
+.item-table th:nth-child(6),
+.item-table th:nth-child(7),
+.item-table td:nth-child(5),
+.item-table td:nth-child(6),
+.item-table td:nth-child(7) {
+    text-align: right;
+}
+
+.item-table .unit {
+    color: #999;
+}
+
+@media print {
+    .main-footer,
+    .box .box-header {
+        display: none;
+    }
+    .box {
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .project-invoice {
+        padding: 2rem;
+        font-size: 1.25rem;
+    }
+    .item-table th,
+    .item-table td {
+        padding: .5rem;
+    }
+}
+
+@media print {
+    .pagebreak {
+        page-break-before: always;
+    }
+    /* page-break-after works, as well */
+}

@@ -1,0 +1,79 @@
+.quotation-section-wrapper
+{
+	position: relative;
+	width: 100%;
+}
+
+.quotation-section
+{
+	position: relative;
+	width: 100%;
+	border: 1px solid #DDD;
+	margin: 0;
+}
+.quotation-section:not(:last-child)
+{
+	border-bottom: none;
+}
+
+.quotation-section .btn-add
+{
+	margin-left: 2px;
+	cursor: pointer;
+	color: #3c8dbc;
+	vertical-align: middle;
+}
+.quotation-section .btn-add:hover
+{
+	color: #72afd2;
+}
+
+.quotation-section .btn-add:before
+{
+	content: "\f055";
+	font-family: FontAwesome;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.quotation-section .btn-delete
+{
+	margin-left: 2px;
+	cursor: pointer;
+	color: #3c8dbc;
+	vertical-align: middle;
+}
+.quotation-section .btn-delete:hover
+{
+	color: #72afd2;
+}
+
+.quotation-section .btn-delete:before
+{
+	content: "\f056";
+	font-family: FontAwesome;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.quotation-section .header
+{
+	padding: .75rem;
+	font-weight: bold;
+}
+
+.quotation-section.expand .header
+{
+	border-bottom: 1px solid #DDD;
+}
+
+.quotation-section .body
+{
+	display: none;
+	padding: .75rem;
+}
+
+.quotation-section.expand .body
+{
+	display: block;
+}

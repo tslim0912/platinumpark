@@ -1,0 +1,345 @@
+@font-face {
+    font-family: 'Poppins-Black';
+    src: url('../../fonts/Poppins/Poppins-Black.otf');
+}
+@font-face {
+    font-family: 'Poppins-BlackItalic';
+    src: url('../../fonts/Poppins/Poppins-BlackItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    src: url('../../fonts/Poppins/Poppins-Bold.otf');
+}
+@font-face {
+    font-family: 'Poppins-BoldItalic';
+    src: url('../../fonts/Poppins/Poppins-BoldItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-ExtraBold';
+    src: url('../../fonts/Poppins/Poppins-ExtraBold.otf');
+}
+@font-face {
+    font-family: 'Poppins-ExtraBoldItalic';
+    src: url('../../fonts/Poppins/Poppins-ExtraBoldItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-ExtraLight';
+    src: url('../../fonts/Poppins/Poppins-ExtraLight.otf');
+}
+@font-face {
+    font-family: 'Poppins-ExtraLightItalic';
+    src: url('../../fonts/Poppins/Poppins-ExtraLightItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Italic';
+    src: url('../../fonts/Poppins/Poppins-Italic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Light';
+    src: url('../../fonts/Poppins/Poppins-Light.otf');
+}
+@font-face {
+    font-family: 'Poppins-LightItalic';
+    src: url('../../fonts/Poppins/Poppins-LightItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../fonts/Poppins/Poppins-Medium.otf');
+}
+@font-face {
+    font-family: 'Poppins-MediumItalic';
+    src: url('../../fonts/Poppins/Poppins-MediumItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../../fonts/Poppins/Poppins-Regular.otf');
+}
+@font-face {
+    font-family: 'Poppins-SemiBold';
+    src: url('../../fonts/Poppins/Poppins-SemiBold.otf');
+}
+@font-face {
+    font-family: 'Poppins-SemiBoldItalic';
+    src: url('../../fonts/Poppins/Poppins-SemiBoldItalic.otf');
+}
+@font-face {
+    font-family: 'Poppins-Thin';
+    src: url('../../fonts/Poppins/Poppins-Thin.otf');
+}
+@font-face {
+    font-family: 'Poppins-ThinItalic';
+    src: url('../../fonts/Poppins/Poppins-ThinItalic.otf');
+}
+
+.skin-white a {
+    color: #333;
+}
+
+.skin-white .wrapper,
+.skin-white .main-sidebar,
+.skin-white .left-side,
+.skin-white .main-header .navbar {
+    background-color: #FFFFFF;
+}
+
+.skin-white .main-header .logo {
+    background-color: #FFFFFF;
+    color: #333;
+    border-bottom: 1px solid #333;
+}
+
+.skin-white .sidebar a {
+    color: #333;
+    transition: all 0.25s ease-in-out;
+}
+
+.skin-white .sidebar a:hover,
+.skin-white .sidebar li.active a {
+    color: white;
+    background-color: #222d32;
+}
+
+.swal2-popup {
+    font-size: 1.6rem !important;
+}
+
+.icon-profile i {
+    margin-right: 10px;
+}
+
+.heading-title>h1 {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.btn-add-new {
+    display: inline-block;
+    margin-top: -10px;
+}
+
+table.dataTable {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+.table-bordered>thead>tr>th,
+.table-bordered>tbody>tr>th,
+.table-bordered>tfoot>tr>th,
+.table-bordered>thead>tr>td,
+.table-bordered>tbody>tr>td,
+.table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+
+.badge-pd {
+    padding: 5px 10px;
+}
+
+.table-condensed>tbody>tr>td,
+.table-condensed>tbody>tr>th,
+.table-condensed>tfoot>tr>td,
+.table-condensed>tfoot>tr>th,
+.table-condensed>thead>tr>td,
+.table-condensed>thead>tr>th {
+    border-bottom: 1px solid #ddd;
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.btn-append {
+    border: none;
+    margin-left: 20px;
+    outline: none;
+}
+
+.custom-input {
+    width: 80%;
+    display: inline-block;
+}
+
+.fullwidth {
+    width: 100% !important;
+}
+
+.category {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 3px 20px;
+    font-size: 15px;
+    width: 80%;
+    display: inline-block;
+}
+
+.ml-10 {
+    margin-left: 10px;
+}
+
+.category-area {
+    margin: 5px 0 10px;
+}
+
+.table-margin {
+    margin: 15px 0 20px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.pt-8 {
+    padding: 8px 5px 0 !important;
+}
+
+.custom .select2 {
+    width: 100% !important;
+}
+
+.custom .select2-selection--single {
+    border: none !important;
+}
+
+.input-border {
+    border: none;
+}
+
+.input-border2 {
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.input-border:focus,
+.input-border2:focus {
+    border: 1px solid #3c8dbc;
+    box-shadow: none;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.inline {
+    display: inline-block !important;
+}
+
+.datepicker .table-condensed>tbody>tr>td,
+.datepicker .table-condensed>tbody>tr>th,
+.datepicker .table-condensed>tfoot>tr>td,
+.datepicker .table-condensed>tfoot>tr>th,
+.datepicker .table-condensed>thead>tr>td,
+.datepicker .table-condensed>thead>tr>th {
+    border-bottom: unset;
+}
+
+
+/** modal custom **/
+
+.modal-width {
+    max-width: 450px;
+}
+
+.modal-radius {
+    border-radius: .3125em;
+}
+
+.modal-top {
+    border-top: unset;
+}
+
+.modal-bottom {
+    border-bottom: unset;
+}
+
+.modal-font {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.swal2-popup .swal2-title strong {
+    font-weight: 300 !important;
+}
+
+.red {
+    color: red;
+}
+
+
+/* Automatic Serial Number Row */
+
+.css-serial {
+    counter-reset: serial-number;
+    /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+    counter-increment: serial-number;
+    /* Increment the serial number counter */
+    content: counter(serial-number);
+    /* Display the counter */
+}
+
+a.tooltip-archor-link,
+a.tooltip-archor-link:hover,
+a.tooltip-archor-link:active {
+    color: #333;
+}
+
+textarea.non-resize {
+    resize: none;
+}
+
+textarea.resize-x,
+textarea.resize-horizontal {
+    resize: horizontal;
+}
+
+textarea.resize-y,
+textarea.resize-vertical {
+    resize: vertical;
+}
+
+.box-title[data-widget="collapse"] {
+    cursor: pointer;
+}
+
+.form-control.text-display {
+    height: auto;
+    min-height: 34px;
+}
+
+.btn {
+    margin-bottom: 7px;
+}
+
+.modal .btn {
+    margin-bottom: 0px;
+}
+
+.notifications-menu li.unread {
+    background-color: #e3e3e3;
+}
+
+#item-table .checkbox {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.remove-number-scroll::-webkit-inner-spin-button,
+.remove-number-scroll::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

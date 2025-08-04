@@ -1,0 +1,232 @@
+<?php
+
+namespace App\Http\Controllers\Admin;
+
+use App\Banner;
+use App\BannerImages;
+use Illuminate\Http\Request;
+use App\Traits\SessionsTraits;
+use App\Traits\ProcessImageTraits;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+
+class BannerImagesController extends Controller {
+
+    use SessionsTraits,
+        ProcessImageTraits;
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index() {
+
+        $banner_images = BannerImages::orderBy('sequence', 'asc')->get();
+
+        return view("admin.bannerImages.index", compact('banner_images'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create() {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request) {
+        $files = $request->file("file");
+        
+        if (is_array($files) && count($files) === 0) {
+            return $this->responseJson(['File not found']);
+        }
+
+        if (is_array($files)) {
+            foreach ($files as $file) {
+                $upload_status = $this->uploadImage($file, $request, "banner", $request->banner_id);
+                if (!empty($upload_status)) {
+                    return $this->responseJson([$upload_status], 400);
+                }
+            }
+        }
+
+        return $this->responseJson(['success'], 200);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Banner  $banner
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Banner $banner) {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Banner  $banner
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(BannerImages $bannerImages) {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Banner  $banner
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, BannerImages $bannerImage) {
+        $rules = [
+            'sequence' => 'required',
+            'thumbnail' => 'image|max:2048'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        if (empty($bannerImage)) {
+            return redirect()->back()->withErrors('Image not found')->withInput();
+        }
+
+        $sequence = $request->get("sequence");
+
+        if ($sequence < $bannerImage->sequence) {
+            BannerImages::where('sequence', '>=', $sequence)
+                    ->where('banner_id', $bannerImage->banner_id)
+                    ->where('sequence', '<', $bannerImage->sequence)
+                    ->increment('sequence');
+        } else if ($sequence > $bannerImage->sequence) {
+            BannerImages::where('sequence', '<=', $sequence)
+                    ->where('banner_id', $bannerImage->banner_id)
+                    ->where('sequence', '>', $bannerImage->sequence)
+                    ->decrement('sequence');
+        }
+
+        $bannerImage->image_alt = $request->get('image_alt');
+        $bannerImage->sequence = $request->get('sequence');
+
+        if($bannerImage->video_url) {
+
+            $upload_path_desktop = 'uploads/banner/';
+            if (!$request->hasFile('thumbnail')) {
+                $thumbnail =  $request->get('exist_thumbnail');
+            } else {
+                $file      = $request->file('thumbnail');
+                $file_name_desktop = 'image_desktop' . '_' . time() . '.' . $file->extension();
+                $upload_success = $file->move($upload_path_desktop, $file_name_desktop); // uploading file to given path
+                if (!$upload_success) {
+                    return redirect()->route("admin.banner.index")->with("failure", "Error when tried to save image.");
+                }
+                $thumbnail = $upload_path_desktop . $file_name_desktop;
+            }
+
+
+            $bannerImage->video_url = $request->get('youtube_link');
+            // $bannerImage->image = $request->get('youtube_thumbnail');
+            $bannerImage->image =$thumbnail;
+
+        }
+        
+        $bannerImage->save();
+        if($bannerImage->video_url) {
+            $this->flash("success", "Video has been updated!");
+        } else {
+            $this->flash("success", "Image has been updated!");
+        }
+        return redirect()->route('admin.banner.show', ['banner'=>$bannerImage->banner->id]);
+    }
+
+
+    public function storeYoutube(Request $request, $banner_id) {
+
+        
+        $rules = [
+            'youtube_link' => 'required',
+            'thumbnail' => 'required|image|max:2048',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+        
+        $upload_path_desktop = 'uploads/banner/';
+        if (!$request->hasFile('thumbnail')) {
+            $thumbnail =  '';
+        } else {
+            $file      = $request->file('thumbnail');
+            $file_name_desktop = 'image_desktop' . '_' . time() . '.' . $file->extension();
+            $upload_success = $file->move($upload_path_desktop, $file_name_desktop); // uploading file to given path
+            if (!$upload_success) {
+                return redirect()->route("admin.banner.index")->with("failure", "Error when tried to save image.");
+            }
+            $thumbnail = $upload_path_desktop . $file_name_desktop;
+        }
+        // dd($thumbnail);
+
+        $bannerImages= BannerImages::Where('banner_id', $banner_id)->max('sequence');
+        $sequence = $bannerImages + 1;
+
+        $bannerImage = new BannerImages;
+        $bannerImage->type = 'video';
+        $bannerImage->banner_id = $banner_id;
+        $bannerImage->video_url = $request->get('youtube_link');
+        // $bannerImage->image = $request->get('youtube_thumbnail');
+        $bannerImage->image = $thumbnail;
+        $bannerImage->image_alt = $request->get('image_alt');
+        $bannerImage->sequence = $sequence;
+        
+        $bannerImage->save();
+        
+        $this->flash("success", "YouTube video has been added!");
+        return redirect()->route('admin.banner.show', ['banner'=>$banner_id]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Banner  $banner
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(BannerImages $bannerImage) {
+        if (empty($bannerImage)) {
+            return response()->json(['success' => false, 'message' => 'Image not found']);
+        }
+
+        $delete = $this->unlinkImage($bannerImage, "bannerImages");
+
+        if (!empty($delete)) {
+            return $delete;
+        }
+
+        BannerImages::where('banner_id', $bannerImage->banner_id)
+                ->where('sequence', '>', $bannerImage->sequence)
+                ->decrement('sequence');
+
+        $bannerImage->delete();
+
+        return response()->json(['success' => true, 'message' => '']);
+    }
+
+    private function responseJson($msg, $code = 400) {
+        return response()->json($msg, $code);
+    }
+
+}
