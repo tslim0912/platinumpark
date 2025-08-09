@@ -21,6 +21,8 @@
             
         <p><a href="mailto:helpdesk.nazatower@nazaasset.com.my">helpdesk.nazatower@nazaasset.com.my</a></p>   
 
+        <p><a href="tel:+60122529298">+6012-252-9298</a></p>   
+
         <p>General office hours are from <br>
             Monday-Friday <br />9:00am-5:30pm <br><br/>
             Saturday-Sunday <br />Close</p><br/>

@@ -54,6 +54,10 @@
                 <p>Transportation 
                     Shuttle Service</p>
             </div>
+            <div class="col-sm-3 col-6">
+                <img src="{{ asset('assets/web/images/conveniences/content-9.png') }}" alt="">
+                <p>Concierge Service</p>
+            </div>
         </div>
             
         
