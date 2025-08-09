@@ -294,19 +294,19 @@ a:focus {
  font-family: 'AcuminVariableConcept';
   color: #231f20;
 }
-.footer .social-media a, .social-media-list .social-media a {
+.footer .social-media a, .social-media-list .social-media a, .icon-list .icon-item a {
   margin-right: 10px;
   color: #877769;
   font-size: 18px;
 }
-.footer .social-media a:hover, .social-media-list .social-media a:hover {
+.footer .social-media a:hover, .social-media-list .social-media a:hover, .icon-list .icon-item a:hover {
   color: black;   
 }
-.social-media-list .social-media a {
+.social-media-list .social-media a, .icon-list .icon-item a  {
   font-size: 20px;
   line-height: 20px;
 }
-.social-media-list .social-media a i {
+.social-media-list .social-media a i, .icon-list .icon-item a i {
   font-size: 24px;
   line-height: 24px;
 }

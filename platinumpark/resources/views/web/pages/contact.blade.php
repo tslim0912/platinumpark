@@ -21,7 +21,14 @@
             
         <p><a href="mailto:helpdesk.nazatower@nazaasset.com.my">helpdesk.nazatower@nazaasset.com.my</a></p>   
 
-        <p><a href="tel:+60122529298">+6012-252-9298</a></p>   
+        <ul class="icon-list d-flex gap-2">
+            <li class="icon-item">
+                <a href="tel:+6012-252-9298"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </li>
+            <li class="icon-item">
+                <a href="https://wa.me/60122529298"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            </li>
+        </ul>
 
         <p>General office hours are from <br>
             Monday-Friday <br />9:00am-5:30pm <br><br/>
