@@ -13,6 +13,7 @@
                    <li><a href="{{ route('lifestyle') }}">Lifestyle</a></li>
                    <li><a href="{{ route('conveniences') }}">Conveniences</a></li>
                    <li><a href="{{ route('whats-on') }}">What's On</a></li>
+                   <li><a href="{{ route('wellness') }}">Wellness</a></li>
                    <li><a href="{{ route('contact') }}">Contact Us</a></li>
                    <li><a href="{{ route('about-us') }}">About Us</a></li>
                    <li><a target="_blank" href="https://ul.waze.com/ul?preview_venue_id=66650144.666632507.2256257&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location">Getting Here</a></li>
