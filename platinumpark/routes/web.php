@@ -28,6 +28,9 @@ Route::get('contact', 'HomeController@contact')->name("contact");
 Route::get('lifestyle', 'HomeController@lifestyle')->name("lifestyle");
 Route::get('lifestyle/{slug}', 'HomeController@lifestyleDetail')->name("lifestyle-detail");
 
+Route::get('wellness', 'HomeController@wellness')->name("wellness");
+Route::get('wellness/{slug}', 'HomeController@wellnessDetail')->name("wellness-detail");
+
 Route::get('search', 'HomeController@lifestyle_search')->name('lifestyle.search');
 
 

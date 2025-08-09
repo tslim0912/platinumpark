@@ -10,6 +10,8 @@ use App\Asset;
 use App\Mail\Book;
 use App\LifestyleGallery;
 use App\Lifestyle;
+use App\WellnessGallery;
+use App\Wellness;
 use App\Mail\Enquiry;
 use App\Mail\BookUser;
 use Input, DB, Redirect;
@@ -85,7 +87,24 @@ class HomeController extends Controller
         $lifestyleGallery = LifestyleGallery::where('lifestyle_id', $lifestyle->id)->orderBy('sort', 'asc')->get();
 
         return view("web.pages.lifestyle-detail", compact('lifestyle','lifestyleGallery'));
-    }   
+    }  
+
+    // Create a new page Wellness clone by Lifestyle
+    public function wellness()
+    {   
+        $wellness = Wellness::orderBy('created_at', 'asc')->get();
+
+        return view("web.pages.wellness", compact('wellness'));
+    }
+
+    public function wellnessDetail($slug)
+    {
+        $wellness = Wellness::where('slug', $slug)->first();
+
+        $wellnessGallery = WellnessGallery::where('wellness_id', $wellness->id)->orderBy('sort', 'asc')->get();
+
+        return view("web.pages.wellness-detail", compact('wellness','wellnessGallery'));
+    }  
 
     public function contact()
     {
