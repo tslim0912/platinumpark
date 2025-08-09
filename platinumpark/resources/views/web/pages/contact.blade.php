@@ -23,7 +23,7 @@
 
         <ul class="icon-list d-flex gap-2">
             <li class="icon-item">
-                <a href="tel:+6012-252-9298"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                <a href="tel:+6012-252-9298"><i class="fa fa-phone-square" aria-hidden="true"></i></a>
             </li>
             <li class="icon-item">
                 <a href="https://wa.me/60122529298"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
