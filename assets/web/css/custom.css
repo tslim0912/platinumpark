@@ -105,7 +105,7 @@ ul {
   text-transform: uppercase;
   font-family: 'Avenir';
   letter-spacing: 1.5px;
-  font-size: 13px;
+  font-size: 12px;
 }
 .btn-primary {
   font-family: 'BwModelica-Medium';
@@ -115,7 +115,7 @@ ul {
 }
 #section-header #navbar ul li.inquiry a, .btn-primary {
   background: #c8a179;
-  padding: 10px 20px;
+  padding: 10px 16px;
   text-transform: uppercase;
   transition: .2s ease all;
 }
